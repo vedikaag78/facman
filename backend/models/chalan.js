@@ -1,6 +1,6 @@
 const mongoose = require("mongoose")
 
-const SalesSchema = new mongoose.Schema(
+const ChalanSchema = new mongoose.Schema(
     {
         unit:[
        
@@ -17,17 +17,8 @@ const SalesSchema = new mongoose.Schema(
         batchno:[
 
         ],
-        rate:[
-
-        ],
-        amount:[
-
-        ],
-        total:{
-            type: Number
-        },
-        discount:{
-            type: Number,
+        salesbillno:{
+            type: String
         },
         vehicleno:{
             type: String,
@@ -38,18 +29,10 @@ const SalesSchema = new mongoose.Schema(
         buyervatno:{
             type: String
         },
-        partyname:{
-            type: String
-        },
-        partycontact:{
-            type: Number
-        }
-      
-        
-    },
-    {
+       
+    },{
         timestamps: true
     }
 )
 
-module.exports = mongoose.model('sales', SalesSchema)
+module.exports = mongoose.model('chalan', ChalanSchema)
