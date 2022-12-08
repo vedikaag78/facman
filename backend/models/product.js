@@ -16,7 +16,7 @@ const ProductSchema = new mongoose.Schema(
         weight:{
             type: Number,
         },
-        actualweight:{
+        scrap:{
             type: Number,
         },
         numberofcoils:{
@@ -24,7 +24,23 @@ const ProductSchema = new mongoose.Schema(
         },
         batchno:{
             type: String,
-        }       
+        },
+        series:{
+            type: String,
+        },
+        standard:{
+            type: String,
+        },
+        rawmaterialgrade:{
+            type: String,
+        } ,
+        series:{
+            type: String,
+        },
+        machinenumber:{
+            type: String,
+        },
+
     },
     {
         timestamps: true
