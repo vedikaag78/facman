@@ -108,7 +108,7 @@ adminRouter.route('/manageuser')
     })
 
 
-adminRouter.route('/viewchalans')
+adminRouter.route('/chalans')
     .get((req,res,next) =>{
         Chalan.find({})
         .then((chalans) =>{
