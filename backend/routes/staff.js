@@ -3,6 +3,7 @@ const mongoose = require("mongoose")
 const Product = require('../models/product')
 const Sales = require("../models/sales")
 const Chalan = require("../models/chalan")
+const operatorRouter = require("./operator")
 const staffRouter = express.Router()
 
 staffRouter.use(express.json())
@@ -53,4 +54,4 @@ staffRouter.route('/sales')
         .catch((err) => next(err));
     })
 
- 
+ module.exports = staffRouter

@@ -120,3 +120,5 @@ adminRouter.route('/chalans')
         }, (err) => next(err))
         .catch((err) => next(err));
     })
+
+module.exports = adminRouter
