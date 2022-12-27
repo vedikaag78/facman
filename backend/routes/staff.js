@@ -4,12 +4,13 @@ const Product = require('../models/product')
 const Sales = require("../models/sales")
 const Chalan = require("../models/chalan")
 const operatorRouter = require("./operator")
+const authenticate = require("../authenticate")
 const staffRouter = express.Router()
 
 staffRouter.use(express.json())
 
 staffRouter.route('/chalans')
-    .post((req,res,next) =>{
+    .post(authenticate.verifyStaff,(req,res,next) =>{
         Chalan.create(req.body)
         .then((chalan) =>{
             res.statusCode = 200,
@@ -20,7 +21,7 @@ staffRouter.route('/chalans')
         .catch((err) => next(err));
        
     })
-    .get((req,res,next) =>{
+    .get(authenticate.verifyStaff,(req,res,next) =>{
         Chalan.find({})
         .then((chalans) =>{
             res.statusCode = 200;
@@ -31,7 +32,7 @@ staffRouter.route('/chalans')
     })
 
 staffRouter.route('/stock')
-    .get((req,res,next) =>{
+    .get(authenticate.verifyStaff,(req,res,next) =>{
         Product.find({})
         .then((stock) =>{
             res.statusCode = 200,
@@ -43,7 +44,7 @@ staffRouter.route('/stock')
     })
     
 staffRouter.route('/sales')
-    .get((req,res,next) =>{
+    .get(authenticate.verifyStaff,(req,res,next) =>{
         Sales.find({})
         .then((sales) =>{
             res.statusCode = 200,

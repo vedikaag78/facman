@@ -50,3 +50,25 @@ exports.verifyAdmin = function(req, err, next) {
       return next(err);
     }
 };
+
+exports.verifyOperator = function(req,err,next) {
+    if(req.user.usertype == "operator"){
+        return next();
+    }
+    else{
+        var err = new Error('Only operators are authorized to perform this operation.');
+        err.status = 403;
+        return next(err); 
+    }
+};
+
+exports.verifyStaff = function(req,err,next) {
+    if(req.user.usertype == "staff"){
+        return next();
+    }
+    else{
+        var err = new Error('You are not authorized to perform this operation.');
+        err.status = 403;
+        return next(err); 
+    }
+};

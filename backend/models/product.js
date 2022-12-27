@@ -34,9 +34,6 @@ const ProductSchema = new mongoose.Schema(
         rawmaterialgrade:{
             type: String,
         } ,
-        series:{
-            type: String,
-        },
         machinenumber:{
             type: String,
         },
