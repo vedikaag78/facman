@@ -41,7 +41,8 @@ exports.verifyUser = passport.authenticate('jwt', {session: false});
 
 
 exports.verifyAdmin = function(req, err, next) {
-    if (req.user.admin){
+    console.log(req.user);
+    if (req.user.usertype == "admin"){
       return next();
     } else {
       var err = new Error('Only administrators are authorized to perform this operation.');

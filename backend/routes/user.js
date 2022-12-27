@@ -15,10 +15,14 @@ router.post('/signup', (req, res, next) => {
       res.json({err: err});
     }
     else {
-      if (req.body.firstname)
-        user.firstname = req.body.firstname;
-      if (req.body.lastname)
-        user.lastname = req.body.lastname;
+      if (req.body.name)
+        user.name = req.body.name;
+      if (req.body.email)
+        user.email = req.body.email;
+      if(req.body.phonenum)
+        user.phonenum = req.body.phonenum
+      if(req.body.usertype)
+        user.usertype = req.body.usertype
       user.save((err, user) => {
         if (err) {
           res.statusCode = 500;

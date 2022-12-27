@@ -2,7 +2,7 @@ require('dotenv').config()
 const express = require("express")
 const http = require("http")
 const hostname = "localhost"
-const port = 5000
+const port = 5001
 const app = express()
 const server = http.createServer(app)
 const mydb = process.env.DB

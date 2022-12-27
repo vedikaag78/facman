@@ -15,7 +15,8 @@ const UserSchema = new mongoose.Schema(
         require: true
     },
     usertype:{
-        type: String
+        type: String,
+        default: "staff"
     },
     },
     {
